@@ -69,7 +69,7 @@ const ComingSoon = () => {
 
   const firstDate = new Date(2022, 7, 5);
   const secondDate = new Date();
-)
+
   const diffDays = Math.round(Math.abs((firstDate - secondDate) / day));
   const diffHours = Math.round(Math.abs((firstDate - secondDate) / hour));
   const diffMinutes = Math.round(Math.abs((firstDate - secondDate) / minute));
