@@ -13,7 +13,7 @@ const NotFound = () => {
       <div className="sw-lg-60 px-5">
         <div className="sh-11">
           <NavLink to="/">
-            <div className="logo-default" />
+            <h1>ExtraFrens</h1>
           </NavLink>
         </div>
         <div className="mb-5">

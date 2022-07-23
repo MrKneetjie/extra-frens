@@ -20,7 +20,7 @@ const routesAndMenuItems = {
     //   icon: 'grid-2',
     // },
     {
-      path: `${appRoot}/soon`,
+      path: `${appRoot}`,
       component: ComingSoon,
       label: 'menu.coming-soon',
       icon: 'calendar',
