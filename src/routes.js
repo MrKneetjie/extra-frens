@@ -11,7 +11,7 @@ const routesAndMenuItems = {
       path: DEFAULT_PATHS.APP,
       exact: true,
       redirect: true,
-      to: `${appRoot}/horizontal`,
+      to: `${appRoot}/soon`,
     },
     // {
     //   path: `${appRoot}/horizontal`,
@@ -20,7 +20,7 @@ const routesAndMenuItems = {
     //   icon: 'grid-2',
     // },
     {
-      path: `${appRoot}`,
+      path: `${appRoot}/soon`,
       component: ComingSoon,
       label: 'menu.coming-soon',
       icon: 'calendar',
