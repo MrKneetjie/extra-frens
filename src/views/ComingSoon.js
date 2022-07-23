@@ -66,7 +66,15 @@ const ComingSoon = () => {
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-  const date = 3 * day + 11 * hour + 20 * minute;
+
+  const firstDate = new Date();
+  const secondDate = new Date(2022, 8, 5);
+
+  const diffDays = Math.round(Math.abs((firstDate - secondDate) / day));
+  const diffHours = Math.round(Math.abs((firstDate - secondDate) / hour));
+  const diffMinutes = Math.round(Math.abs((firstDate - secondDate) / minute));
+
+  const date = diffDays * day + diffHours * hour + diffMinutes * minute;
 
 
   const submitEmail = async () => {
