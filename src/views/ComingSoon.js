@@ -69,10 +69,14 @@ const ComingSoon = () => {
 
   const firstDate = new Date(2022, 7, 5);
   const secondDate = new Date();
-
+)
   const diffDays = Math.round(Math.abs((firstDate - secondDate) / day));
   const diffHours = Math.round(Math.abs((firstDate - secondDate) / hour));
   const diffMinutes = Math.round(Math.abs((firstDate - secondDate) / minute));
+
+  console.log(diffDays);
+  console.log(diffHours);
+  console.log(diffMinutes);
 
   const date = diffDays * day + diffHours * hour + diffMinutes * minute;
 
@@ -149,7 +153,7 @@ const ComingSoon = () => {
           <h2 className="cta-1 mb-0 text-primary">ExtraFrens will be available soon!</h2>
         </div>
         <div className="mb-5 sh-9">
-          <Countdown date={Date.now() + date} intervalDelay={0} precision={3} renderer={renderer} />
+          <Countdown date={new Date(2022, 7, 5)} intervalDelay={0} precision={3} renderer={renderer} />
         </div>
         <div className="mb-3">
           <p className="h6 lh-1-5">
