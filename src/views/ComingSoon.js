@@ -60,7 +60,7 @@ const ComingSoon = () => {
   }, [isLoading]);
 
   const title = 'Coming Soon';
-  const description = 'Acorn will be available soon!';
+  const description = 'ExtraFrens will be available soon!';
 
   const second = 1000;
   const minute = second * 60;
