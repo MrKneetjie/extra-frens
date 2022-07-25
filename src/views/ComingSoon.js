@@ -50,7 +50,7 @@ const ComingSoon = () => {
     if (isLoading) {
       mailchimp.setConfig({
         apiKey: MAILCHIMP.ApiKey,
-        server: MAILCHIMP.ServerPrefix,
+        server: "us12",
       });
 
       simulateNetworkRequest().then(() => {
@@ -82,6 +82,8 @@ const ComingSoon = () => {
 
 
   const submitEmail = async () => {
+    console.log(mailchimp);
+    
     const response = await mailchimp.lists.createList({
       name: event.name,
       contact: footerContactInfo,
