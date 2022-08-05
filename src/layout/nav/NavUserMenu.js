@@ -5,6 +5,7 @@ import { Col, Dropdown, Row } from 'react-bootstrap';
 import { MENU_PLACEMENT } from 'constants.js';
 import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import { layoutShowingNavMenu } from 'layout/layoutSlice';
+import { NavLink } from 'react-router-dom';
 
 const NavUserMenuContent = () => (
   <div>
@@ -157,7 +158,13 @@ const NavUserMenu = () => {
   }, [attrMenuAnimate, behaviourHtmlData, attrMobile, color]);
 
   if (!isLogin) {
-    return <></>;
+    return (
+      <div>
+        <NavLink to="/login">
+          <h1>Login</h1>
+        </NavLink>
+      </div>
+    );
   }
   return (
     <Dropdown as="div" bsPrefix="user-container d-flex" onToggle={onToggle} show={showingNavMenu === MENU_NAME} drop="down">
