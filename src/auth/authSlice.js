@@ -6,7 +6,7 @@ const initialState = {
   currentUser: IS_DEMO ? DEFAULT_USER : {},
 };
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {

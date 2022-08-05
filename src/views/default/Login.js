@@ -6,8 +6,9 @@ import { useFormik } from 'formik';
 import LayoutFullpage from 'layout/LayoutFullpage';
 import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import HtmlHead from 'components/html-head/HtmlHead';
-import { setCurrentUser } from 'auth/authSlice';
+import { authSlice } from 'auth/authSlice';
 import { USER_ROLE } from 'constants.js';
+import { store } from 'store.js';
 
 const Login = () => {
   const title = 'Login';
@@ -19,15 +20,15 @@ const Login = () => {
   });
   const initialValues = { email: '', password: '' };
   const onSubmit = (values) =>{
-    console.log("1");
-    setCurrentUser({
+
+    store.dispatch(authSlice.actions.setCurrentUser({
       id: 1,
       name: 'Kyle J',
       thumb: '/img/profile/profile-9.webp',
       role: USER_ROLE.Admin,
       email: 'kyle.j@gmail.com',
-    });
-    console.log("2");
+    }));
+    
   }
   // const onSubmit = (values) => console.log('submit form', values);
 
