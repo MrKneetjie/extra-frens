@@ -18,13 +18,17 @@ const Login = () => {
     password: Yup.string().min(6, 'Must be at least 6 chars!').required('Password is required'),
   });
   const initialValues = { email: '', password: '' };
-  const onSubmit = (values) => setCurrentUser({
+  const onSubmit = (values) =>{
+    console.log("1");
+    setCurrentUser({
       id: 1,
       name: 'Kyle J',
       thumb: '/img/profile/profile-9.webp',
       role: USER_ROLE.Admin,
       email: 'kyle.j@gmail.com',
-  });
+    });
+    console.log("2");
+  }
   // const onSubmit = (values) => console.log('submit form', values);
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
