@@ -74,10 +74,6 @@ const ComingSoon = () => {
   const diffHours = Math.round(Math.abs((firstDate - secondDate) / hour));
   const diffMinutes = Math.round(Math.abs((firstDate - secondDate) / minute));
 
-  console.log(diffDays);
-  console.log(diffHours);
-  console.log(diffMinutes);
-
   const date = diffDays * day + diffHours * hour + diffMinutes * minute;
 
 

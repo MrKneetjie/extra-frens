@@ -49,5 +49,5 @@ export const USER_ROLE = {
 
 export const MAILCHIMP = {
   ApiKey: '87bc35c37263b4eaad38286011008f16-us12',
-  ServerPrefix: 'us12'
+  ServerPrefix: 'us12',
 }
