@@ -7,7 +7,7 @@ import LayoutFullpage from 'layout/LayoutFullpage';
 import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import HtmlHead from 'components/html-head/HtmlHead';
 import { setCurrentUser } from 'auth/authSlice';
-import { USER_ROLE } from 'constants';
+import { USER_ROLE } from 'constants.js';
 
 const Login = () => {
   const title = 'Login';
