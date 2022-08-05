@@ -6,6 +6,8 @@ import { useFormik } from 'formik';
 import LayoutFullpage from 'layout/LayoutFullpage';
 import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import HtmlHead from 'components/html-head/HtmlHead';
+import { setCurrentUser } from 'auth/authSlice';
+import { USER_ROLE } from 'constants';
 
 const Login = () => {
   const title = 'Login';
@@ -16,7 +18,14 @@ const Login = () => {
     password: Yup.string().min(6, 'Must be at least 6 chars!').required('Password is required'),
   });
   const initialValues = { email: '', password: '' };
-  const onSubmit = (values) => console.log('submit form', values);
+  const onSubmit = (values) => setCurrentUser({
+      id: 1,
+      name: 'Kyle J',
+      thumb: '/img/profile/profile-9.webp',
+      role: USER_ROLE.Admin,
+      email: 'kyle.j@gmail.com',
+  });
+  // const onSubmit = (values) => console.log('submit form', values);
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
   const { handleSubmit, handleChange, values, touched, errors } = formik;
