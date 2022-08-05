@@ -28,18 +28,11 @@ const Register = () => {
       <div className="w-100 w-lg-75 w-xxl-50">
         <div>
           <div className="mb-5">
-            <h1 className="display-3 text-white">Multiple Niches</h1>
-            <h1 className="display-3 text-white">Ready for Your Project</h1>
+            <h1 className="display-3 text-white">ExtraFrens</h1>
           </div>
           <p className="h6 text-white lh-1-5 mb-5">
-            Dynamically target high-payoff intellectual capital for customized technologies. Objectively integrate emerging core competencies before
-            process-centric communities...
+            Subscribe to the exclusive content of your favourite creators on our platform.
           </p>
-          <div className="mb-5">
-            <Button size="lg" variant="outline-white" href="/">
-              Learn More
-            </Button>
-          </div>
         </div>
       </div>
     </div>
@@ -50,7 +43,7 @@ const Register = () => {
       <div className="sw-lg-50 px-5">
         <div className="sh-11">
           <NavLink to="/">
-            <div className="logo-default" />
+            <h1>ExtraFrens</h1>
           </NavLink>
         </div>
         <div className="mb-5">
