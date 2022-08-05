@@ -158,13 +158,7 @@ const NavUserMenu = () => {
   }, [attrMenuAnimate, behaviourHtmlData, attrMobile, color]);
 
   if (!isLogin) {
-    return (
-      <div>
-        <NavLink to="/login">
-          <h1>Login</h1>
-        </NavLink>
-      </div>
-    );
+    return <></>;
   }
   return (
     <Dropdown as="div" bsPrefix="user-container d-flex" onToggle={onToggle} show={showingNavMenu === MENU_NAME} drop="down">

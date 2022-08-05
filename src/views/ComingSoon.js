@@ -7,6 +7,7 @@ import LayoutFullpage from 'layout/LayoutFullpage';
 import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import HtmlHead from 'components/html-head/HtmlHead';
 import { MAILCHIMP } from 'constants.js';
+import { useSelector } from 'react-redux';
 
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
@@ -16,6 +17,8 @@ const simulateNetworkRequest = () => {
 
 const ComingSoon = () => {
   const [isLoading, setLoading] = useState(false);
+  const { isLogin, currentUser } = useSelector((state) => state.auth);
+  console.log(isLogin, currentUser);
 
   const event = {
     name: "Extra Frens MailList"
