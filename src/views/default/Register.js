@@ -20,20 +20,19 @@ const Register = () => {
   const initialValues = { name: '', email: '', password: '', terms: false };
   // const onSubmit = (values) => console.log('submit form', values);
   const onSubmit = (values) => {
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-
-    const raw = {
-      "name": values.name,
-      "email": values.email,
-      "password": values.password,
-      "thumb": 'test',
-      "role": 'admin',
-    };
+    const raw = JSON.stringify({
+      name: values.name,
+      email: values.email,
+      password: values.password,
+      thumb: 'test',
+      role: 'admin',
+    });
 
     const requestOptions = {
       method: 'POST',
-      headers: myHeaders,
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: raw,
       redirect: 'follow',
       mode: 'no-cors',
