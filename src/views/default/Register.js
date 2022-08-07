@@ -22,10 +22,14 @@ const Register = () => {
   const onSubmit = (values) => {
     fetch('https://extrafrens-api.vercel.app/api/createUser', {
       method: 'POST',
+      mode: 'no-cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
       headers: {
-        Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/json',
       },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
       body: JSON.stringify({
         name: values.name,
         email: values.email,
