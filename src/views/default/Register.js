@@ -23,13 +23,13 @@ const Register = () => {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
-    const raw = JSON.stringify({
+    const raw = {
       "name": values.name,
       "email": values.email,
       "password": values.password,
       "thumb": 'test',
       "role": 'admin',
-    });
+    };
 
     const requestOptions = {
       method: 'POST',
