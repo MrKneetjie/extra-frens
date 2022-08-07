@@ -87,7 +87,7 @@ const Login = () => {
               Login
             </Button>
             <NavLink to="/register">
-              <Button size="lg" type="button">
+              <Button size="lg" type="button" className="ms-2">
                 Register
               </Button>
             </NavLink>

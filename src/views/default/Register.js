@@ -89,7 +89,7 @@ const Register = () => {
               Signup
             </Button>
             <NavLink to="/login"> 
-              <Button size="lg" type="button">
+              <Button size="lg" type="button" className="ms-2">
                 Login
               </Button>
             </NavLink>
