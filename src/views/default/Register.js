@@ -20,28 +20,28 @@ const Register = () => {
   const initialValues = { name: '', email: '', password: '', terms: false };
   // const onSubmit = (values) => console.log('submit form', values);
   const onSubmit = (values) => {
-    fetch('https://extrafrens-api.vercel.app/api/createUser', {
-      method: 'POST',
-      mode: 'no-cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify({
-        name: values.name,
-        email: values.email,
-        password: values.password,
-        thumb: 'test',
-        role: 'admin',
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
 
-    console.log('submit form', values);
+    const raw = JSON.stringify({
+      name: values.name,
+      email: values.email,
+      password: values.password,
+      thumb: 'test',
+      role: 'admin',
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    fetch('https://extrafrens-api.vercel.app/api/createUser', requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log('error', error));
   };
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
