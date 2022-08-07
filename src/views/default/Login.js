@@ -28,7 +28,7 @@ const Login = () => {
       role: USER_ROLE.Admin,
       email: 'kyle.j@gmail.com',
     }));
-    
+
   }
   // const onSubmit = (values) => console.log('submit form', values);
 
@@ -86,6 +86,11 @@ const Login = () => {
             <Button size="lg" type="submit">
               Login
             </Button>
+            <NavLink to="/register">
+              <Button size="lg" type="button">
+                Register
+              </Button>
+            </NavLink>
           </form>
         </div>
       </div>

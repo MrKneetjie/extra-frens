@@ -88,6 +88,11 @@ const Register = () => {
             <Button size="lg" type="submit">
               Signup
             </Button>
+            <NavLink to="/login">
+              <Button size="lg" type="button">
+                Login
+              </Button>
+            </NavLink>
           </form>
         </div>
       </div>
