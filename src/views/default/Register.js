@@ -34,7 +34,7 @@ const Register = () => {
         name: values.name,
         email: values.email,
         password: values.password,
-        thumb: '',
+        thumb: 'test',
         role: 'admin',
       }),
     })
