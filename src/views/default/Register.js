@@ -18,7 +18,27 @@ const Register = () => {
     terms: Yup.bool().required().oneOf([true], 'Terms must be accepted'),
   });
   const initialValues = { name: '', email: '', password: '', terms: false };
-  const onSubmit = (values) => console.log('submit form', values);
+  // const onSubmit = (values) => console.log('submit form', values);
+  const onSubmit = (values) => {
+    fetch('https://extrafrens-api.vercel.app/api/createUser', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+        thumb: '',
+        role: 'admin',
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+
+    console.log('submit form', values);
+  };
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
   const { handleSubmit, handleChange, values, touched, errors } = formik;
@@ -30,9 +50,7 @@ const Register = () => {
           <div className="mb-5">
             <h1 className="display-3 text-white">ExtraFrens</h1>
           </div>
-          <p className="h6 text-white lh-1-5 mb-5">
-            Subscribe to the exclusive content of your favourite creators on our platform.
-          </p>
+          <p className="h6 text-white lh-1-5 mb-5">Subscribe to the exclusive content of your favourite creators on our platform.</p>
         </div>
       </div>
     </div>
@@ -88,7 +106,7 @@ const Register = () => {
             <Button size="lg" type="submit">
               Signup
             </Button>
-            <NavLink to="/login"> 
+            <NavLink to="/login">
               <Button size="lg" type="button" className="ms-2">
                 Login
               </Button>
