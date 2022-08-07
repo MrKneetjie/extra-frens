@@ -24,11 +24,11 @@ const Register = () => {
     myHeaders.append('Content-Type', 'application/json');
 
     const raw = JSON.stringify({
-      name: values.name,
-      email: values.email,
-      password: values.password,
-      thumb: 'test',
-      role: 'admin',
+      "name": values.name,
+      "email": values.email,
+      "password": values.password,
+      "thumb": 'test',
+      "role": 'admin',
     });
 
     const requestOptions = {
