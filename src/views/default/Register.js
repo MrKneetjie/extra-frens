@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
@@ -8,6 +8,7 @@ import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import HtmlHead from 'components/html-head/HtmlHead';
 
 const Register = () => {
+  const navigate = useNavigate();
   const title = 'Register';
   const description = 'Register Page';
 
@@ -28,7 +29,7 @@ const Register = () => {
       email: values.email,
       password: values.password,
       thumb: 'test',
-      role: 'admin',
+      role: 'user',
     });
 
     const requestOptions = {
@@ -39,8 +40,14 @@ const Register = () => {
     };
 
     fetch('https://extrafrens-api.vercel.app/api/createUser', requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((response) => {
+        if (response.status === 200) {
+          console.log('Successful registration');
+          navigate('./login');
+        } else {
+          console.log(`Looks like there was a problem. Status Code: ${response.status}`);
+        }
+      })
       .catch((error) => console.log('error', error));
   };
 
