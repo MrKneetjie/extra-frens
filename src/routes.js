@@ -10,8 +10,9 @@ const routesAndMenuItems = {
     {
       path: DEFAULT_PATHS.APP,
       exact: true,
-      redirect: true,
-      to: `${appRoot}/soon`,
+      component: ComingSoon,
+      // redirect: true,
+      // to: `${appRoot}/soon`,
     },
     // {
     //   path: `${appRoot}/horizontal`,
