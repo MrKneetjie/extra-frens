@@ -43,6 +43,8 @@ const Login = () => {
           console.log('Successful Login');
 
           response.json().then((data) => {
+            console.log(data);
+            
             store.dispatch(
               authSlice.actions.setCurrentUser({
                 id: data.id,
