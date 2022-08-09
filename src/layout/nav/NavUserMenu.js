@@ -21,9 +21,6 @@ const NavUserMenuContent = () => (
           <li>
             <a href="#/!">Preferences</a>
           </li>
-          <li>
-            <a href="#/!">Calendar</a>
-          </li>
         </ul>
       </Col>
       <Col xs="6" className="ps-1 pe-1">
@@ -37,7 +34,7 @@ const NavUserMenuContent = () => (
         </ul>
       </Col>
     </Row>
-    <Row className="mb-1 ms-0 me-0">
+    {/* <Row className="mb-1 ms-0 me-0">
       <Col xs="12" className="p-1 mb-2 pt-2">
         <div className="text-extra-small text-primary">APPLICATION</div>
       </Col>
@@ -61,32 +58,22 @@ const NavUserMenuContent = () => (
           </li>
         </ul>
       </Col>
-    </Row>
+    </Row> */}
     <Row className="mb-1 ms-0 me-0">
       <Col xs="12" className="p-1 mb-3 pt-3">
         <div className="separator-light" />
       </Col>
       <Col xs="6" className="ps-1 pe-1">
         <ul className="list-unstyled">
-          <li>
+        <li>
             <a href="#/!">
-              <CsLineIcons icon="help" className="me-2" size="17" /> <span className="align-middle">Help</span>
-            </a>
-          </li>
-          <li>
-            <a href="#/!">
-              <CsLineIcons icon="file-text" className="me-2" size="17" /> <span className="align-middle">Docs</span>
+              <CsLineIcons icon="gear" className="me-2" size="17" /> <span className="align-middle">Settings</span>
             </a>
           </li>
         </ul>
       </Col>
       <Col xs="6" className="pe-1 ps-1">
         <ul className="list-unstyled">
-          <li>
-            <a href="#/!">
-              <CsLineIcons icon="gear" className="me-2" size="17" /> <span className="align-middle">Settings</span>
-            </a>
-          </li>
           <li>
             <a href="#/!">
               <CsLineIcons icon="logout" className="me-2" size="17" /> <span className="align-middle">Logout</span>
