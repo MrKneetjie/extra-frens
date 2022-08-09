@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavUserMenuContent = () => (
   <div>
-    <Row className="mb-3 ms-0 me-0">
+    <Row className="mb-1 ms-0 me-0">
       <Col xs="12" className="ps-1 mb-2">
         <div className="text-extra-small text-primary">ACCOUNT</div>
       </Col>
