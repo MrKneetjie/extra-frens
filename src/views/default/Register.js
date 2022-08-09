@@ -19,7 +19,7 @@ const Register = () => {
     terms: Yup.bool().required().oneOf([true], 'Terms must be accepted'),
   });
   const initialValues = { name: '', email: '', password: '', terms: false };
-  // const onSubmit = (values) => console.log('submit form', values);
+
   const onSubmit = (values) => {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');

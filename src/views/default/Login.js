@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
@@ -11,6 +11,7 @@ import { USER_ROLE } from 'constants.js';
 import { store } from 'store.js';
 
 const Login = () => {
+  const history = useHistory();
   const title = 'Login';
   const description = 'Login Page';
 
@@ -19,18 +20,44 @@ const Login = () => {
     password: Yup.string().min(6, 'Must be at least 6 chars!').required('Password is required'),
   });
   const initialValues = { email: '', password: '' };
-  const onSubmit = (values) =>{
 
-    store.dispatch(authSlice.actions.setCurrentUser({
-      id: 1,
-      name: 'Kyle J',
-      thumb: '/img/profile/profile-9.webp',
-      role: USER_ROLE.Admin,
-      email: 'kyle.j@gmail.com',
-    }));
+  const onSubmit = (values) => {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
 
-  }
-  // const onSubmit = (values) => console.log('submit form', values);
+    const raw = JSON.stringify({
+      email: values.email,
+      password: values.password,
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    fetch('https://extrafrens-api.vercel.app/api/login', requestOptions)
+      .then((response) => {
+        if (response.status === 200) {
+          console.log('Successful registration');
+
+          console.log(response.JSON());
+          // store.dispatch(authSlice.actions.setCurrentUser({
+          //   id: 1,
+          //   name: 'Kyle J',
+          //   thumb: '/img/profile/profile-9.webp',
+          //   role: USER_ROLE.Admin,
+          //   email: 'kyle.j@gmail.com',
+          // }));
+
+          // history.push('/login');
+        } else {
+          console.log(`Looks like there was a problem. Status Code: ${response.status}`);
+        }
+      })
+      .catch((error) => console.log('error', error));
+  };
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
   const { handleSubmit, handleChange, values, touched, errors } = formik;
