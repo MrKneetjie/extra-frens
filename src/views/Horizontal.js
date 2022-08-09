@@ -4,8 +4,17 @@ import HtmlHead from 'components/html-head/HtmlHead';
 import BreadcrumbList from 'components/breadcrumb-list/BreadcrumbList';
 import useCustomLayout from 'hooks/useCustomLayout';
 import { MENU_PLACEMENT, LAYOUT } from 'constants.js';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const HorizontalPage = () => {
+  const history = useHistory();
+  const { isLogin, currentUser } = useSelector((state) => state.auth);
+
+  if(!isLogin) {
+    history.push('/login');
+  }
+
   const title = 'Subscriptions';
   const description = 'View Subscriptions';
 
