@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
@@ -8,7 +8,7 @@ import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import HtmlHead from 'components/html-head/HtmlHead';
 
 const Register = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   const title = 'Register';
   const description = 'Register Page';
 
@@ -43,7 +43,7 @@ const Register = () => {
       .then((response) => {
         if (response.status === 200) {
           console.log('Successful registration');
-          navigate('./login');
+          history.push('/login');
         } else {
           console.log(`Looks like there was a problem. Status Code: ${response.status}`);
         }
