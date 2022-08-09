@@ -44,14 +44,14 @@ const Login = () => {
 
           response.json().then((data) => {
             console.log(data);
-            
+
             store.dispatch(
               authSlice.actions.setCurrentUser({
-                id: data.id,
-                name: data.name,
-                email: data.email,
-                thumb: data.thumb,
-                role: data.role,
+                id: data.account.id,
+                name: data.account.name,
+                email: data.account.email,
+                thumb: data.account.thumb,
+                role: data.account.role,
               }));
 
               // history.push('/login');
