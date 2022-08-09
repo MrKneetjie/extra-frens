@@ -36,7 +36,6 @@ const Register = () => {
       headers: myHeaders,
       body: raw,
       redirect: 'follow',
-      mode: 'no-cors',
     };
 
     fetch('https://extrafrens-api.vercel.app/api/createUser', requestOptions)
