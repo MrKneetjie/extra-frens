@@ -43,8 +43,6 @@ const Login = () => {
           console.log('Successful Login');
 
           response.json().then((data) => {
-            console.log(data);
-
             store.dispatch(
               authSlice.actions.setCurrentUser({
                 id: data.account.id,
@@ -54,7 +52,7 @@ const Login = () => {
                 role: data.account.role,
               }));
 
-              // history.push('/login');
+              history.push('/');
             })
             .catch((error) => console.log('error', error));
 
