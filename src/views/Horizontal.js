@@ -6,8 +6,8 @@ import useCustomLayout from 'hooks/useCustomLayout';
 import { MENU_PLACEMENT, LAYOUT } from 'constants.js';
 
 const HorizontalPage = () => {
-  const title = 'Horizontal Starter Page';
-  const description = 'An empty page with a boxed horizontal layout.';
+  const title = 'Subscriptions';
+  const description = 'View Subscriptions';
 
   const breadcrumbs = [{ to: '', text: 'Home' }];
 
