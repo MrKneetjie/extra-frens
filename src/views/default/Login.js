@@ -40,18 +40,22 @@ const Login = () => {
     fetch('https://extrafrens-api.vercel.app/api/login', requestOptions)
       .then((response) => {
         if (response.status === 200) {
-          console.log('Successful registration');
+          console.log('Successful Login');
 
-          console.log(response.JSON());
-          // store.dispatch(authSlice.actions.setCurrentUser({
-          //   id: 1,
-          //   name: 'Kyle J',
-          //   thumb: '/img/profile/profile-9.webp',
-          //   role: USER_ROLE.Admin,
-          //   email: 'kyle.j@gmail.com',
-          // }));
+          response.json().then((data) => {
+            store.dispatch(
+              authSlice.actions.setCurrentUser({
+                id: data.id,
+                name: data.name,
+                email: data.email,
+                thumb: data.thumb,
+                role: data.role,
+              }));
 
-          // history.push('/login');
+              // history.push('/login');
+            })
+            .catch((error) => console.log('error', error));
+
         } else {
           console.log(`Looks like there was a problem. Status Code: ${response.status}`);
         }
@@ -69,9 +73,7 @@ const Login = () => {
           <div className="mb-5">
             <h1 className="display-3 text-white">ExtraFrens</h1>
           </div>
-          <p className="h6 text-white lh-1-5 mb-5">
-            Subscribe to the exclusive content of your favourite creators on our platform.
-          </p>
+          <p className="h6 text-white lh-1-5 mb-5">Subscribe to the exclusive content of your favourite creators on our platform.</p>
         </div>
       </div>
     </div>
