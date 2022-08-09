@@ -20,6 +20,9 @@ const Register = () => {
   const initialValues = { name: '', email: '', password: '', terms: false };
   // const onSubmit = (values) => console.log('submit form', values);
   const onSubmit = (values) => {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+
     const raw = JSON.stringify({
       name: values.name,
       email: values.email,
@@ -30,11 +33,10 @@ const Register = () => {
 
     const requestOptions = {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: myHeaders,
       body: raw,
       redirect: 'follow',
+      mode: 'no-cors',
     };
 
     fetch('https://extrafrens-api.vercel.app/api/createUser', requestOptions)
