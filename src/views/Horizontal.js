@@ -107,8 +107,6 @@ const HorizontalPage = () => {
                       </div>
                     </div>
                   </div>
-              </Col>
-              <Col xl="8" xxl="9" className="mb-5">
                 <div className="mb-5 card">
                   <a href="/pages/blog/detail">
                     <img src="https://i.kym-cdn.com/entries/icons/original/000/038/027/cover2.jpg" className="card-img-top sh-35" alt="card image" />
@@ -181,8 +179,6 @@ const HorizontalPage = () => {
                     </div>
                   </div>
                 </div>
-              </Col>
-              <Col xl="8" xxl="9" className="mb-5">
                 <div className="mb-5 card">
                   <a href="/pages/blog/detail">
                     <img src="https://i.kym-cdn.com/entries/icons/original/000/038/027/cover2.jpg" className="card-img-top sh-35" alt="card image" />
