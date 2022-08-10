@@ -28,7 +28,7 @@ const Register = () => {
       name: values.name,
       email: values.email,
       password: values.password,
-      thumb: 'test',
+      thumb: '/img/profile/profile-2.webp',
       role: 'user',
     });
 
