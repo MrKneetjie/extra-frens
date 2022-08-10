@@ -43,7 +43,11 @@ const HorizontalPage = () => {
                     <h4 className="mb-3">
                       <a href="/pages/blog/detail">Basic Introduction to Bread Making</a>
                     </h4>
-                    <p className="clamp text-alternate mb-0" style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2;">
+                    <p
+                      className="clamp text-alternate mb-0"
+                      // eslint-disable-next-line react/style-prop-object
+                      style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2;"
+                    >
                       Jujubes brownie marshmallow apple pie donut ice cream jelly-o jelly-o gummi bears. Tootsie roll chocolate bar dragée bonbon cheesecake
                       icing. Danish wafer donut cookie caramels gummies topping.</p>
                   </div>
