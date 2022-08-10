@@ -109,7 +109,17 @@ const HorizontalPage = () => {
                 </div>
               </Col>
               <Col xl="4" xxl="3">
-                <h1>test</h1>
+                <h2 className="small-title">Tags</h2>
+                <div className="card">
+                  <div className="mb-n1 card-body">
+                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">Kyle (12)</button>
+                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">Is (3)</button>
+                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">Waiting (1)</button>
+                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">On (3)</button>
+                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">Onlybands (5)</button>
+                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">Now (7)</button>
+                  </div>
+                </div>
               </Col>
             </Row>
           </section>
