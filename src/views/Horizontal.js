@@ -37,28 +37,31 @@ const HorizontalPage = () => {
               <Col xl="8" xxl="9" className="mb-5">
                 <div className="mb-5 card">
                   <a href="/pages/blog/detail">
-                    <img src="/img/product/large/product-1.webp" className="card-img-top sh-35" alt="card image" />
+                    <img src="https://i.kym-cdn.com/entries/icons/original/000/038/027/cover2.jpg" className="card-img-top sh-35" alt="card image" />
                   </a>
                   <div className="card-body">
                     <h4 className="mb-3">
-                      <a href="/pages/blog/detail">Basic Introduction to Bread Making</a>
+                      <a href="/pages/blog/detail">Basic Introduction to Pimpin</a>
                     </h4>
                     <p className="clamp text-alternate mb-0">
-                      Jujubes brownie marshmallow apple pie donut ice cream jelly-o jelly-o gummi bears. Tootsie roll chocolate bar dragée bonbon cheesecake
-                      icing. Danish wafer donut cookie caramels gummies topping.</p>
+                      Pimpin hoes is like aging fine wine. It takes time to get it right. But once you do get it right, it's amazing</p>
                   </div>
                   <div className="border-0 pt-0 card-footer">
                     <div className="align-items-center row">
                       <div className="col-6">
                         <div className="d-flex align-items-center">
                           <div className="sw-5 d-inline-block position-relative me-3">
-                            <img src="/img/profile/profile-1.webp" className="img-fluid rounded-xl" alt="thumb" />
+                            <img
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcVHAFW54RCcKkJH4OWZ26gmqfcHE9QEGiyXNjznaTZKnp2WubCdl1q-BMrorF6h2QXxg&usqp=CAU"
+                              className="img-fluid rounded-xl"
+                              alt="thumb"
+                            />
                           </div>
                           <div className="d-inline-block">
                             <a aria-current="page" className="active" href="/pages/blog/list">
-                              Olli Hawkins
+                              Andrew Tate
                             </a>
-                            <div className="text-muted text-small">Development Lead</div>
+                            <div className="text-muted text-small">Creator</div>
                           </div>
                         </div>
                       </div>
@@ -109,9 +112,6 @@ const HorizontalPage = () => {
                 <h1>test</h1>
               </Col>
             </Row>
-            <Card className="mb-5" body>
-              <Card.Text>{description}</Card.Text>
-            </Card>
           </section>
           {/* Title End */}
         </Col>
