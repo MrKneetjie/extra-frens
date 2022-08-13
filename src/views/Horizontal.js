@@ -26,7 +26,7 @@ const HorizontalPage = () => {
     const fetchData = async () => {
       const result = await fetch('https://extrafrens-api.vercel.app/api/getPosts');
       const body = await result.json();
-      setPosts(body);
+      setPosts(body.posts);
     }
 
     fetchData();
