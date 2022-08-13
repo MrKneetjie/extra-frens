@@ -41,7 +41,7 @@ const HorizontalPage = () => {
         redirect: 'follow',
       };
   
-      fetch('https://extrafrens-api.vercel.app/api/createUser', requestOptions)
+      fetch('https://extrafrens-api.vercel.app/api/createPost', requestOptions)
         .then((response) => {
           if (response.status === 200) {
             console.log('Successful registration');
