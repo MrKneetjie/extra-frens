@@ -48,7 +48,7 @@ const Login = () => {
               authSlice.actions.setCurrentUser({
                 id: data.account.id,
                 name: data.account.name,
-                // email: data.account.email,
+                email: data.account.email,
                 thumb: data.account.thumb,
                 role: data.account.role,
               }));
