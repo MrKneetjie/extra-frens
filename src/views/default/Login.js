@@ -46,7 +46,8 @@ const Login = () => {
             console.log(data.account);
             store.dispatch(
               authSlice.actions.setCurrentUser({
-                id: data.account.id,
+                // eslint-disable-next-line no-underscore-dangle
+                id: data.account._id,
                 name: data.account.name,
                 email: data.account.email,
                 thumb: data.account.thumb,
