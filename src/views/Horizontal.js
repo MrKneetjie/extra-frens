@@ -32,33 +32,6 @@ const HorizontalPage = () => {
     fetchData();
   }, []);
 
-  // const posts = [
-  //   {
-  //     title: 'Basic Introduction to Pimpin',
-  //     description: "Pimpin hoes is like aging fine wine. It takes time to get it right. But once you do get it right, it's amazing",
-  //     banner: 'https://i.kym-cdn.com/entries/icons/original/000/038/027/cover2.jpg',
-  //     user: {
-  //       avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcVHAFW54RCcKkJH4OWZ26gmqfcHE9QEGiyXNjznaTZKnp2WubCdl1q-BMrorF6h2QXxg&usqp=CAU',
-  //       name: 'Andrew Tate',
-  //       role: 'Creator',
-  //     },
-  //     views: 421,
-  //     comments: 5,
-  //   },
-  //   {
-  //     title: 'Basic Introduction to Pimpin',
-  //     description: "Pimpin hoes is like aging fine wine. It takes time to get it right. But once you do get it right, it's amazing",
-  //     banner: 'https://i.kym-cdn.com/entries/icons/original/000/038/027/cover2.jpg',
-  //     user: {
-  //       avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcVHAFW54RCcKkJH4OWZ26gmqfcHE9QEGiyXNjznaTZKnp2WubCdl1q-BMrorF6h2QXxg&usqp=CAU',
-  //       name: 'Kyle',
-  //       role: 'Creator',
-  //     },
-  //     views: 420,
-  //     comments: 69,
-  //   },
-  // ];
-
   useCustomLayout({ placement: MENU_PLACEMENT.Horizontal, layout: LAYOUT.Boxed });
 
   return (
