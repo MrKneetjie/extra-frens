@@ -43,7 +43,6 @@ const Login = () => {
           console.log('Successful Login');
 
           response.json().then((data) => {
-            console.log(data.account);
             store.dispatch(
               authSlice.actions.setCurrentUser({
                 // eslint-disable-next-line no-underscore-dangle
