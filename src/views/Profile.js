@@ -46,7 +46,7 @@ const ProfilePage = () => {
               <BreadcrumbList items={breadcrumbs} />
             </div>
             <Row className="g-5">
-              <Col xl="8" xxl="9" className="mb-5">
+              <Col xl="4" xxl="3" className="mb-5">
                 <h2 className="small-title">Profile</h2>
                 <div className="mb-5 card">
                   <div className="card-body">
@@ -206,30 +206,22 @@ const ProfilePage = () => {
                   </div>
                 </div>
               </Col>
-              <Col xl="4" xxl="3">
-                <h2 className="small-title">Tags</h2>
-                <div className="card">
-                  <div className="mb-n1 card-body">
-                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">
-                      Kyle (12)
-                    </button>
-                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">
-                      Is (3)
-                    </button>
-                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">
-                      Waiting (1)
-                    </button>
-                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">
-                      On (3)
-                    </button>
-                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">
-                      Onlybands (5)
-                    </button>
-                    <button type="button" className="mb-1 me-1 btn btn-outline-primary btn-sm">
-                      Now (7)
-                    </button>
-                  </div>
-                </div>
+              <Col xl="8" xxl="9">
+                <h2 className="small-title">Posts</h2>
+                {posts &&
+                  posts.map((post) => {
+                    return (
+                      <Post
+                        key={post.id}
+                        title={post.title}
+                        description={post.description}
+                        banner={post.banner}
+                        user={post.user}
+                        views={post.views}
+                        comments={post.comments}
+                      />
+                    );
+                  })}
               </Col>
             </Row>
           </section>
