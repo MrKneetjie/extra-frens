@@ -16,7 +16,7 @@ const NavUserMenuContent = () => (
       <Col xs="6" className="ps-1 pe-1">
         <ul className="list-unstyled">
           <li>
-            <a href="#/!">User Info</a>
+            <a href="#/!">My Account</a>
           </li>
           <li>
             <a href="#/!">Preferences</a>
