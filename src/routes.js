@@ -17,18 +17,6 @@ const routesAndMenuItems = {
       label: 'menu.home',
       icon: 'home',
     },
-    // {
-    //   path: `${appRoot}/horizontal`,
-    //   component: HorizontalPage,
-    //   label: 'menu.horizontal',
-    //   icon: 'grid-2',
-    // },
-    {
-      path: `${appRoot}/soon`,
-      component: ComingSoon,
-      label: 'menu.coming-soon',
-      icon: 'house',
-    },
     {
       path: `${appRoot}/profile/:userId`,
       component: ProfilePage,
