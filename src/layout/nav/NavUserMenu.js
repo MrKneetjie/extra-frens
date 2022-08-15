@@ -7,34 +7,41 @@ import CsLineIcons from 'cs-line-icons/CsLineIcons';
 import { layoutShowingNavMenu } from 'layout/layoutSlice';
 import { NavLink } from 'react-router-dom';
 
-const NavUserMenuContent = () => (
-  <div>
-    <Row className="mb-1 ms-0 me-0">
-      <Col xs="12" className="ps-1 mb-2">
-        <div className="text-extra-small text-primary">ACCOUNT</div>
-      </Col>
-      <Col xs="6" className="ps-1 pe-1">
-        <ul className="list-unstyled">
-          <li>
-            <a href="#/!">My Account</a>
-          </li>
-          <li>
-            <a href="#/!">Preferences</a>
-          </li>
-        </ul>
-      </Col>
-      <Col xs="6" className="ps-1 pe-1">
-        <ul className="list-unstyled">
-          <li>
-            <a href="#/!">Security</a>
-          </li>
-          <li>
-            <a href="#/!">Billing</a>
-          </li>
-        </ul>
-      </Col>
-    </Row>
-    {/* <Row className="mb-1 ms-0 me-0">
+const NavUserMenuContent = () => {
+  const { isLogin, currentUser } = useSelector((state) => state.auth);
+
+  const route = `/profile/${currentUser.id}`;
+
+  return (
+    <div>
+      <Row className="mb-1 ms-0 me-0">
+        <Col xs="12" className="ps-1 mb-2">
+          <div className="text-extra-small text-primary">ACCOUNT</div>
+        </Col>
+        <Col xs="6" className="ps-1 pe-1">
+          <ul className="list-unstyled">
+            <li>
+              <a href={route}>My Account</a>
+            </li>
+            <li>
+              <NavLink to="/profile/">
+                <a>Preferences</a>
+              </NavLink>
+            </li>
+          </ul>
+        </Col>
+        <Col xs="6" className="ps-1 pe-1">
+          <ul className="list-unstyled">
+            <li>
+              <a href="#/!">Security</a>
+            </li>
+            <li>
+              <a href="#/!">Billing</a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+      {/* <Row className="mb-1 ms-0 me-0">
       <Col xs="12" className="p-1 mb-2 pt-2">
         <div className="text-extra-small text-primary">APPLICATION</div>
       </Col>
@@ -59,31 +66,32 @@ const NavUserMenuContent = () => (
         </ul>
       </Col>
     </Row> */}
-    <Row className="mb-1 ms-0 me-0">
-      <Col xs="12" className="p-1 mb-3 pt-3">
-        <div className="separator-light" />
-      </Col>
-      <Col xs="6" className="ps-1 pe-1">
-        <ul className="list-unstyled">
-        <li>
-            <a href="#/!">
-              <CsLineIcons icon="gear" className="me-2" size="17" /> <span className="align-middle">Settings</span>
-            </a>
-          </li>
-        </ul>
-      </Col>
-      <Col xs="6" className="pe-1 ps-1">
-        <ul className="list-unstyled">
-          <li>
-            <a href="#/!">
-              <CsLineIcons icon="logout" className="me-2" size="17" /> <span className="align-middle">Logout</span>
-            </a>
-          </li>
-        </ul>
-      </Col>
-    </Row>
-  </div>
-);
+      <Row className="mb-1 ms-0 me-0">
+        <Col xs="12" className="p-1 mb-3 pt-3">
+          <div className="separator-light" />
+        </Col>
+        <Col xs="6" className="ps-1 pe-1">
+          <ul className="list-unstyled">
+            <li>
+              <a href="#/!">
+                <CsLineIcons icon="gear" className="me-2" size="17" /> <span className="align-middle">Settings</span>
+              </a>
+            </li>
+          </ul>
+        </Col>
+        <Col xs="6" className="pe-1 ps-1">
+          <ul className="list-unstyled">
+            <li>
+              <a href="#/!">
+                <CsLineIcons icon="logout" className="me-2" size="17" /> <span className="align-middle">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+    </div>
+  );
+};
 
 const NavUserMenuDropdownToggle = React.memo(
   React.forwardRef(({ onClick, expanded = false, user = {} }, ref) => (
