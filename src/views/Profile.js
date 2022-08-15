@@ -5,12 +5,14 @@ import BreadcrumbList from 'components/breadcrumb-list/BreadcrumbList';
 import useCustomLayout from 'hooks/useCustomLayout';
 import { MENU_PLACEMENT, LAYOUT } from 'constants.js';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Post from 'components/post/Post';
 
 const ProfilePage = () => {
   const history = useHistory();
+  const { userId } = useParams();
   const { isLogin, currentUser } = useSelector((state) => state.auth);
+  const [profile, setProfile] = useState({});
   const [posts, setPosts] = useState([]);
 
   if (!isLogin) {
@@ -24,9 +26,36 @@ const ProfilePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch('https://extrafrens-api.vercel.app/api/getPosts');
-      const body = await result.json();
-      setPosts(body.posts);
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const raw = JSON.stringify({
+        account: userId,
+      });
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+      };
+
+      fetch('https://extrafrens-api.vercel.app/api/getProfileInfo', requestOptions)
+        .then((response) => {
+          if (response.status === 200) {
+            console.log('Successful Fetch');
+
+            response
+              .json()
+              .then((data) => {
+                setProfile(data.account);
+              })
+              .catch((error) => console.log('error', error));
+          } else {
+            console.log(`Looks like there was a problem. Status Code: ${response.status}`);
+          }
+        })
+        .catch((error) => console.log('error', error));
     };
 
     fetchData();
@@ -57,7 +86,7 @@ const ProfilePage = () => {
                         </div>
                         <div className="h5 mb-0">Blaine Cottrell</div>
                         <div className="text-muted">Executive UI/UX Designer</div>
-                        <div className="text-muted">
+                        {/* <div className="text-muted">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -73,7 +102,7 @@ const ProfilePage = () => {
                             <path d="M3.5 8.49998C3.5 -0.191432 16.5 -0.191368 16.5 8.49998C16.5 12.6585 12.8256 15.9341 11.0021 17.3036C10.4026 17.7539 9.59777 17.754 8.99821 17.3037C7.17467 15.9342 3.5 12.6585 3.5 8.49998Z" />
                           </svg>
                           <span className="align-middle">Montreal, Canada</span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="flex-column nav" role="tablist">
