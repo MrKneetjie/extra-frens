@@ -56,6 +56,23 @@ const ProfilePage = () => {
           }
         })
         .catch((error) => console.log('error', error));
+
+      fetch('https://extrafrens-api.vercel.app/api/getPosts', requestOptions)
+        .then((response) => {
+          if (response.status === 200) {
+            console.log('Successful Fetch');
+
+            response
+              .json()
+              .then((data) => {
+                setPosts(data.posts);
+              })
+              .catch((error) => console.log('error', error));
+          } else {
+            console.log(`Looks like there was a problem. Status Code: ${response.status}`);
+          }
+        })
+        .catch((error) => console.log('error', error));
     };
 
     fetchData();
