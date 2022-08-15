@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import HtmlHead from 'components/html-head/HtmlHead';
 import BreadcrumbList from 'components/breadcrumb-list/BreadcrumbList';
 import useCustomLayout from 'hooks/useCustomLayout';
@@ -7,6 +7,7 @@ import { MENU_PLACEMENT, LAYOUT } from 'constants.js';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import Post from 'components/post/Post';
+import PostModal from 'components/post/PostModal';
 
 const ProfilePage = () => {
   const history = useHistory();
@@ -14,6 +15,7 @@ const ProfilePage = () => {
   const { isLogin, currentUser } = useSelector((state) => state.auth);
   const [profile, setProfile] = useState({});
   const [posts, setPosts] = useState([]);
+  const [showPostModal, setShowPostModal] = useState(false);
 
   if (!isLogin) {
     history.push('/login');
@@ -251,6 +253,9 @@ const ProfilePage = () => {
                     </div>
                   </div>
                 </div>
+                <Button size="lg" type="button" className="ms-2" onClick={setShowPostModal(true)}>
+                  Post
+                </Button>
               </Col>
               <Col xl="8" xxl="9">
                 <h2 className="small-title">Posts</h2>
@@ -274,6 +279,7 @@ const ProfilePage = () => {
           {/* Title End */}
         </Col>
       </Row>
+      <PostModal show={showPostModal} setShow={setShowPostModal} />
     </>
   );
 };
