@@ -14,6 +14,8 @@ const routesAndMenuItems = {
       component: HorizontalPage,
       // redirect: true,
       // to: `${appRoot}/soon`,
+      label: 'menu.home',
+      icon: 'home',
     },
     // {
     //   path: `${appRoot}/horizontal`,
@@ -25,7 +27,7 @@ const routesAndMenuItems = {
       path: `${appRoot}/soon`,
       component: ComingSoon,
       label: 'menu.coming-soon',
-      icon: 'calendar',
+      icon: 'house',
     },
     {
       path: `${appRoot}/profile/:userId`,
