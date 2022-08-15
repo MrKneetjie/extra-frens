@@ -284,7 +284,7 @@ const ProfilePage = () => {
           {/* Title End */}
         </Col>
       </Row>
-      <PostModal show={showPostModal} setShow={setShowPostModal} />
+      <PostModal show={showPostModal} setShow={onPostClick} />
     </>
   );
 };
