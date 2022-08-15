@@ -24,19 +24,17 @@ const NavUserMenuContent = () => {
               <a href={route}>My Account</a>
             </li>
             <li>
-              <NavLink to="/profile/">
-                <a>Preferences</a>
-              </NavLink>
+              <a>Preferences</a>
             </li>
           </ul>
         </Col>
         <Col xs="6" className="ps-1 pe-1">
           <ul className="list-unstyled">
             <li>
-              <a href="#/!">Security</a>
+              <a>Security</a>
             </li>
             <li>
-              <a href="#/!">Billing</a>
+              <a>Billing</a>
             </li>
           </ul>
         </Col>
