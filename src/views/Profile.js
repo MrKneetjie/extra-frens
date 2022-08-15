@@ -80,6 +80,10 @@ const ProfilePage = () => {
     fetchData();
   }, []);
 
+  const handlePostModal = () => {
+    setShowPostModal(!showPostModal);
+  }
+
   useCustomLayout({ placement: MENU_PLACEMENT.Horizontal, layout: LAYOUT.Boxed });
 
   return (
@@ -253,7 +257,7 @@ const ProfilePage = () => {
                     </div>
                   </div>
                 </div>
-                <Button size="lg" type="button" className="ms-2" onClick={setShowPostModal(true)}>
+                <Button size="lg" type="button" className="ms-2" onClick={handlePostModal.bind()}>
                   Post
                 </Button>
               </Col>
