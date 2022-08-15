@@ -24,9 +24,34 @@ const HorizontalPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch('https://extrafrens-api.vercel.app/api/getPosts');
-      const body = await result.json();
-      setPosts(body.posts);
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const raw = JSON.stringify({});
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+      };
+
+      fetch('https://extrafrens-api.vercel.app/api/getPosts', requestOptions)
+        .then((response) => {
+          if (response.status === 200) {
+            console.log('Successful Fetch');
+
+            response
+              .json()
+              .then((data) => {
+                setPosts(data.posts);
+              })
+              .catch((error) => console.log('error', error));
+          } else {
+            console.log(`Looks like there was a problem. Status Code: ${response.status}`);
+          }
+        })
+        .catch((error) => console.log('error', error));
     }
 
     fetchData();
